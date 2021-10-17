@@ -1,0 +1,15 @@
+<% if session[:login_uid]%>
+  <% @tweet.each do |t| %>
+    <p>
+      <%= t.message %><br>
+    </p>
+  <% end %>
+  <%= link_to 'ログアウト', tops_logout_path %>
+  <% else %>
+    <% @tweet.each do |t| %>
+      <p>
+        <%= t.message %><br>
+      </p>
+    <% end %>
+   <%= link_to 'ログイン',tops_main_path %>
+<% end %>
