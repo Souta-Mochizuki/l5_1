@@ -8,7 +8,7 @@
         <i class="material-icons">favorite</i>
       <% end %>
       <%= link_to 'いいね削除', like_path(t), method: :delete %>
-      <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %><br>
+      <%= link_to '削除', "/tweets/#{t.id}", method: :delete %><br>
     </p>
   <% end %>
   <%= link_to 'ツイートする',new_tweet_path %>
