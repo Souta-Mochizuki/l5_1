@@ -19,7 +19,6 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     if tweet.destroy
-     flash[:notice] = "1レコード削除されました"
      redirect_to '/'
     end
   end
