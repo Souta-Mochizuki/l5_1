@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'likes/index'
   get 'tops/main'
-  get 'tweets/index'
-  get 'users/index'
   post 'tops/login'
   get 'tops/logout'
   resources :tops

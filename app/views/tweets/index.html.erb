@@ -1,12 +1,19 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <% if session[:login_uid]%>
-  <% @tweet.each do |t| %>
+  <% @tweets.each do |t| %>
     <p>
       <%= t.message %><br>
+      <%= link_to 'いいね', likes_path(tweet_id: t.id), method: :post %>
+      <% if Like.find_by(tweet_id: t.id) %>
+        <i class="material-icons">favorite</i>
+      <% end %>
+      <%= link_to 'いいね削除', like_path(t), method: :delete %>
     </p>
   <% end %>
+  <%= link_to 'ツイートする',new_tweet_path %>
   <%= link_to 'ログアウト', tops_logout_path %>
   <% else %>
-    <% @tweet.each do |t| %>
+    <% @tweets.each do |t| %>
       <p>
         <%= t.message %><br>
       </p>
